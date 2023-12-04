@@ -1,0 +1,16 @@
+current directory: /Users/jwangz446/Documents/SalesforceMobileSDKMapsted/vendor/bundle/ruby/3.2.0/gems/json-2.7.0/ext/json
+/Users/jwangz446/.rvm/rubies/ruby-3.2.0/bin/ruby -I /Users/jwangz446/.rvm/rubies/ruby-3.2.0/lib/ruby/3.2.0 extconf.rb
+creating Makefile
+
+current directory: /Users/jwangz446/Documents/SalesforceMobileSDKMapsted/vendor/bundle/ruby/3.2.0/gems/json-2.7.0/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20231204-85109-h2tq3d sitelibdir\=./.gem.20231204-85109-h2tq3d clean
+
+current directory: /Users/jwangz446/Documents/SalesforceMobileSDKMapsted/vendor/bundle/ruby/3.2.0/gems/json-2.7.0/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20231204-85109-h2tq3d sitelibdir\=./.gem.20231204-85109-h2tq3d
+make: Nothing to be done for `all'.
+
+current directory: /Users/jwangz446/Documents/SalesforceMobileSDKMapsted/vendor/bundle/ruby/3.2.0/gems/json-2.7.0/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20231204-85109-h2tq3d sitelibdir\=./.gem.20231204-85109-h2tq3d install
+
+current directory: /Users/jwangz446/Documents/SalesforceMobileSDKMapsted/vendor/bundle/ruby/3.2.0/gems/json-2.7.0/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20231204-85109-h2tq3d sitelibdir\=./.gem.20231204-85109-h2tq3d clean
