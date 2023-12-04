@@ -3,15 +3,22 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "lint": "eslint .",
-    "start": "react-native start",
-    "test": "jest"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "build:common:ios": "rimraf moduleIds_ios.txt && react-native bundle --entry-file common.js --platform ios --dev false --reset-cache --assets-dest ./ios/bundle --bundle-output ./ios/bundle/common.jsbundle --config ./common.config.js",
+    "build:orderade:ios": "react-native bundle --entry-file index.orderade.js --platform ios --dev false --reset-cache --assets-dest ./ios/bundle --bundle-output ./ios/bundle/orderade.ios.jsbundle --config ./buz.config.js",
+    "build:SalesforceMobileSDKMapsted:ios": "react-native bundle --entry-file index.js --platform ios --dev false --reset-cache --assets-dest ./ios/bundle --bundle-output ./ios/bundle/SalesforceMobileSDKMapsted.ios.jsbundle --config ./buz.config.js",
+    "postinstall": "patch-package"
+  },
+  "sdkDependencies": {
+    "SalesforceMobileSDK-Android": "https://github.com/forcedotcom/SalesforceMobileSDK-Android.git#v10.2.0",
+    "SalesforceMobileSDK-iOS": "https://github.com/forcedotcom/SalesforceMobileSDK-iOS.git#v10.2.0"
   },
   "dependencies": {
     "react": "18.2.0",
-    "react-native": "0.72.7"
+    "react-native": "0.72.7",
+    "react-native-force": "git+https://github.com/forcedotcom/SalesforceMobileSDK-ReactNative.git#v10.2.0",
+    "react-native-fs": "^2.20.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

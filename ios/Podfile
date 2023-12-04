@@ -1,31 +1,14 @@
-# Resolve react_native_pods.rb with node to allow for hoisting
-require Pod::Executable.execute_command('node', ['-p',
-  'require.resolve(
-    "react-native/scripts/react_native_pods.rb",
-    {paths: [process.argv[1]]},
-  )', __dir__]).strip
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+require_relative '../mobile_sdk/SalesforceMobileSDK-iOS/mobilesdk_pods'
 
-platform :ios, min_ios_version_supported
-prepare_react_native_project!
+platform :ios, '14.0'
+#use_modular_headers!
+use_frameworks! :linkage => :static
 
-# If you are using a `react-native-flipper` your iOS build will fail when `NO_FLIPPER=1` is set.
-# because `react-native-flipper` depends on (FlipperKit,...) that will be excluded
-#
-# To fix this you can also exclude `react-native-flipper` using a `react-native.config.js`
-# ```js
-# module.exports = {
-#   dependencies: {
-#     ...(process.env.NO_FLIPPER ? { 'react-native-flipper': { platforms: { ios: null } } } : {}),
-# ```
-flipper_config = ENV['NO_FLIPPER'] == "1" ? FlipperConfiguration.disabled : FlipperConfiguration.enabled
-
-linkage = ENV['USE_FRAMEWORKS']
-if linkage != nil
-  Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
-  use_frameworks! :linkage => linkage.to_sym
-end
-
+project 'SalesforceMobileSDKMapsted.xcodeproj'
 target 'SalesforceMobileSDKMapsted' do
+  source 'https://cdn.cocoapods.org/'
   config = use_native_modules!
 
   # Flags change depending on the env values.
@@ -33,30 +16,104 @@ target 'SalesforceMobileSDKMapsted' do
 
   use_react_native!(
     :path => config[:reactNativePath],
-    # Hermes is now enabled by default. Disable by setting this flag to false.
-    :hermes_enabled => flags[:hermes_enabled],
+    :hermes_enabled => true,
     :fabric_enabled => flags[:fabric_enabled],
-    # Enables Flipper.
-    #
-    # Note that if you have use_frameworks! enabled, Flipper will not work and
-    # you should disable the next line.
-    :flipper_configuration => flipper_config,
-    # An absolute path to your application root.
+    :flipper_configuration => FlipperConfiguration.disabled,
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+
+  use_mobile_sdk!(:path => '../mobile_sdk/SalesforceMobileSDK-iOS')
+
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-Camera', :path => "#{permissions_path}/Camera"
+  pod 'react-native-netinfo', :path => '../node_modules/@react-native-community/netinfo'
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+  pod 'Permission-LocationAccuracy', :path => "#{permissions_path}/LocationAccuracy"
+  pod 'Permission-LocationAlways', :path => "#{permissions_path}/LocationAlways"
+  pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse"
+
+  pod 'SalesforceReact', :path => '../node_modules/react-native-force'
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+  
+  # Mapsted map start
+  # platform :ios, '13.0'
+  #source 'https://github.com/CocoaPods/Specs.git'
+  # Real machine
+  #source 'https://github.com/Mapsted/podspec.git'
+  # Simulator
+  source 'https://github.com/Mapsted/podspec-simulator.git'
+  # Resolve react_native_pods.rb with node to allow for hoisting
+  #use_frameworks!
+  #use_frameworks! :linkage => :static
+  # If you only need positioning, include this pod only!
+  pod 'mapsted-sdk-core', '~> 5.3.1'
+  # If you are displaying maps, include the following two pods
+  pod 'mapsted-sdk-core-map'
+  pod 'mapsted-sdk-map', '~> 5.3.1'
+  # If you want prebuilt map-ui (e.g., routing UI), include this pod
+  pod 'mapsted-sdk-map-ui', '~> 5.3.1'
+  # If you want prebuilt Mapsted UI/UX, include this pod
+  #pod 'mapsted-sdk-ui-components', '~> 5.3.3'
+  # If you want to incorporate the Mapsted Location Marketing SDK, include this pod
+  pod 'mapsted-sdk-loc-marketing', '~> 5.3.1'
+  # If you want to incorporate the Mapsted Alerts SDK, include this pod
+  pod 'mapsted-sdk-alerts', '~> 5.3.1'
+  # Mapsted map end
+
 
   target 'SalesforceMobileSDKMapstedTests' do
     inherit! :complete
     # Pods for testing
   end
 
+  pre_install do |installer|
+    # Mobile SDK pre install
+    mobile_sdk_pre_install(installer)
+  end
+
   post_install do |installer|
-    # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
-    react_native_post_install(
+    PLIST_BUDDY_PATH = '/usr/libexec/PlistBuddy'
+
+  installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['OTHER_CPLUSPLUSFLAGS'] = ''
+        config.build_settings['ARCHS'] = '${ARCHS_STANDARD_64_BIT}'
+        config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+        # Workaround for RN 0.72 and Reanimated 2.10.0
+        if target.name == "hermes-engine"
+                installer.pods_project.files.each do |fileref|
+                  if fileref.path.end_with? "hermes.xcframework"
+                    hermes_plist_file = "#{fileref.real_path}/Info.plist"
+                    # Patch Hermes to remove the debug symbols entry from the Info.plist (as it's not shipped with it)
+                    # This might be removed once Hermes starts to ship with Debug symbols or we remove our
+                    # direct dependency from the Main iOS target on "hermes.xcframework"
+                    Open3.capture3(PLIST_BUDDY_PATH, '-c', 'Delete :AvailableLibraries:0:DebugSymbolsPath', hermes_plist_file)
+                    Open3.capture3(PLIST_BUDDY_PATH, '-c', 'Delete :AvailableLibraries:1:DebugSymbolsPath', hermes_plist_file)
+                    Open3.capture3(PLIST_BUDDY_PATH, '-c', 'Delete :AvailableLibraries:2:DebugSymbolsPath', hermes_plist_file)
+                  end
+                end
+              end
+        if target.name === "RNReanimated" or target.name === "RCT-Folly"
+                config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
+              end
+      end
+    end
+  # Comment the following if you do not want the SDK to emit signpost events for instrumentation. Signposts are  enabled for non release version of the app.
+  signposts_post_install(installer)
+
+  # React native post install
+  react_native_post_install(
       installer,
-      config[:reactNativePath],
+      # Set `mac_catalyst_enabled` to `true` in order to apply patches
+      # necessary for Mac Catalyst builds
       :mac_catalyst_enabled => false
-    )
-    __apply_Xcode_12_5_M1_post_install_workaround(installer)
+  )
+
+  # Cocoapods workaround for M1 machines
+  __apply_Xcode_12_5_M1_post_install_workaround(installer)
+
+  # Mobile SDK post install
+  mobile_sdk_post_install(installer)
   end
 end
