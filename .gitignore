@@ -1,0 +1,61 @@
+footmarks/*
+ios/Google-Maps-IOS-Utils
+ios/assets/src
+ios/Pods
+ios/main.jsbundle
+ios/Podfile.lock
+node_modules/*
+# OSX
+#
+.DS_Store
+src/.scannerwork
+.scannerwork
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+# ios/bundle/*
+# Android/IJ
+#
+*.iml
+.idea
+.gradle
+local.properties
+
+# node.js
+#
+node_modules
+node_modules/
+npm-debug.log
+
+# BUCK
+buck-out/
+\.buckd/
+android/app/libs
+android/keystores/debug.keystore
+
+# NPM
+package-lock.json
+package-lock.json.*
+
+
+.jest/
+
+yarn.lock
+
+moduleIds_ios.txt
