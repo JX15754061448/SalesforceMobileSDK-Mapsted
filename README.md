@@ -18,6 +18,6 @@ cd ios & pod install
 
 Add “common-mobile-lib” into “node_modules” folder
 
-yarn start
+cd ../ & yarn start
 
 Open SalesforceMobileSDKMapsted.xcworkspace and build it
