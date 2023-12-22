@@ -6,7 +6,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 ## Step 1:
 
-remove "common-mobile-lib": "git+https://PepsiCoIT@dev.azure.com/PepsiCoIT/HaloCRM_SAFe/\_git/Common_Mobile_Lib#dev", from “package.json”
+remove "common-mobile-lib" from “package.json”
 
 cd SalesforceMobileSDK-Mapsted & yarn install
 
