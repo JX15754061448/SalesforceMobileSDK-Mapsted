@@ -4,7 +4,7 @@ require_relative '../mobile_sdk/SalesforceMobileSDK-iOS/mobilesdk_pods'
 
 platform :ios, '14.0'
 #use_modular_headers!
-use_frameworks! :linkage => :static
+use_frameworks!
 
 project 'SalesforceMobileSDKMapsted.xcodeproj'
 target 'SalesforceMobileSDKMapsted' do
@@ -36,28 +36,11 @@ target 'SalesforceMobileSDKMapsted' do
   pod 'RNFS', :path => '../node_modules/react-native-fs'
   
   # Mapsted map start
-  # platform :ios, '13.0'
-  #source 'https://github.com/CocoaPods/Specs.git'
-  # Real machine
+  source 'https://cdn.cocoapods.org/'
   #source 'https://github.com/Mapsted/podspec.git'
-  # Simulator
   source 'https://github.com/Mapsted/podspec-simulator.git'
-  # Resolve react_native_pods.rb with node to allow for hoisting
   #use_frameworks!
-  #use_frameworks! :linkage => :static
-  # If you only need positioning, include this pod only!
-  pod 'mapsted-sdk-core', '~> 5.3.1'
-  # If you are displaying maps, include the following two pods
-  pod 'mapsted-sdk-core-map'
-  pod 'mapsted-sdk-map', '~> 5.3.1'
-  # If you want prebuilt map-ui (e.g., routing UI), include this pod
-  pod 'mapsted-sdk-map-ui', '~> 5.3.1'
-  # If you want prebuilt Mapsted UI/UX, include this pod
-  #pod 'mapsted-sdk-ui-components', '~> 5.3.3'
-  # If you want to incorporate the Mapsted Location Marketing SDK, include this pod
-  pod 'mapsted-sdk-loc-marketing', '~> 5.3.1'
-  # If you want to incorporate the Mapsted Alerts SDK, include this pod
-  pod 'mapsted-sdk-alerts', '~> 5.3.1'
+  pod 'mapsted-sdk-map-ui', '~> 5.0'
   # Mapsted map end
 
 
