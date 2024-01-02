@@ -8,12 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* SalesforceMobileSDKMapstedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SalesforceMobileSDKMapstedTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-SalesforceMobileSDKMapsted.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-SalesforceMobileSDKMapsted.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.a */; };
+		7149423EB8E5FAC55D562FC9 /* libPods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0E8C23ED771AB9BC0C39B1 /* libPods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.a */; };
+		73211ED62B43B35B00BC880C /* mapstyle.zip in Resources */ = {isa = PBXBuildFile; fileRef = 73211ED12B43B35B00BC880C /* mapstyle.zip */; };
+		73211ED72B43B35B00BC880C /* ios_licence.key in Resources */ = {isa = PBXBuildFile; fileRef = 73211ED22B43B35B00BC880C /* ios_licence.key */; };
+		73211ED82B43B35B00BC880C /* HelveticaLTStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 73211ED42B43B35B00BC880C /* HelveticaLTStd-Bold.otf */; };
+		73211ED92B43B35B00BC880C /* HelveticaLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 73211ED52B43B35B00BC880C /* HelveticaLTStd-Roman.otf */; };
+		73244E1C2B43BC62005FA76F /* RNTMapstedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73244E1B2B43BC62005FA76F /* RNTMapstedView.swift */; };
+		73244E202B43BC77005FA76F /* UIVIew-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73244E1E2B43BC77005FA76F /* UIVIew-Extension.swift */; };
+		73244E222B43C0C1005FA76F /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73244E212B43C0C1005FA76F /* DebugLog.swift */; };
+		73244E292B43C2BA005FA76F /* ChangeViewBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 73244E252B43C2A4005FA76F /* ChangeViewBridge.m */; };
+		73244E2A2B43C2BA005FA76F /* RNTMapstedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73244E272B43C2B2005FA76F /* RNTMapstedManager.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		E0D0D338DD73E1B82403FCBA /* libPods-SalesforceMobileSDKMapsted.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A160484FE75BE1DDFE7F0F /* libPods-SalesforceMobileSDKMapsted.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +45,26 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SalesforceMobileSDKMapsted/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SalesforceMobileSDKMapsted/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SalesforceMobileSDKMapsted/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-SalesforceMobileSDKMapsted.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalesforceMobileSDKMapsted.debug.xcconfig"; path = "Target Support Files/Pods-SalesforceMobileSDKMapsted/Pods-SalesforceMobileSDKMapsted.debug.xcconfig"; sourceTree = "<group>"; };
+		40A160484FE75BE1DDFE7F0F /* libPods-SalesforceMobileSDKMapsted.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SalesforceMobileSDKMapsted.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5709B34CF0A7D63546082F79 /* Pods-SalesforceMobileSDKMapsted.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalesforceMobileSDKMapsted.release.xcconfig"; path = "Target Support Files/Pods-SalesforceMobileSDKMapsted/Pods-SalesforceMobileSDKMapsted.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.debug.xcconfig"; path = "Target Support Files/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-SalesforceMobileSDKMapsted.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SalesforceMobileSDKMapsted.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D0E8C23ED771AB9BC0C39B1 /* libPods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73211ED12B43B35B00BC880C /* mapstyle.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = mapstyle.zip; sourceTree = "<group>"; };
+		73211ED22B43B35B00BC880C /* ios_licence.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ios_licence.key; sourceTree = "<group>"; };
+		73211ED42B43B35B00BC880C /* HelveticaLTStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaLTStd-Bold.otf"; sourceTree = "<group>"; };
+		73211ED52B43B35B00BC880C /* HelveticaLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaLTStd-Roman.otf"; sourceTree = "<group>"; };
+		732165172B34684700BA2941 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7321651A2B346A1700BA2941 /* CoreLocationUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocationUI.framework; path = System/Library/Frameworks/CoreLocationUI.framework; sourceTree = SDKROOT; };
+		7321651B2B346A1700BA2941 /* libswiftCoreLocation.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftCoreLocation.tbd; path = usr/lib/swift/libswiftCoreLocation.tbd; sourceTree = SDKROOT; };
+		73244E1A2B43BC5C005FA76F /* SalesforceMobileSDKMapsted-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SalesforceMobileSDKMapsted-Bridging-Header.h"; sourceTree = "<group>"; };
+		73244E1B2B43BC62005FA76F /* RNTMapstedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RNTMapstedView.swift; path = "../New Group/RNTMapstedView.swift"; sourceTree = "<group>"; };
+		73244E1E2B43BC77005FA76F /* UIVIew-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew-Extension.swift"; sourceTree = "<group>"; };
+		73244E212B43C0C1005FA76F /* DebugLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugLog.swift; sourceTree = "<group>"; };
+		73244E252B43C2A4005FA76F /* ChangeViewBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeViewBridge.m; sourceTree = "<group>"; };
+		73244E262B43C2AB005FA76F /* ChangeViewBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeViewBridge.h; sourceTree = "<group>"; };
+		73244E272B43C2B2005FA76F /* RNTMapstedManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNTMapstedManager.m; sourceTree = "<group>"; };
+		73244E282B43C2BA005FA76F /* RNTMapstedManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNTMapstedManager.h; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SalesforceMobileSDKMapsted/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.release.xcconfig"; path = "Target Support Files/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -51,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.a in Frameworks */,
+				7149423EB8E5FAC55D562FC9 /* libPods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-SalesforceMobileSDKMapsted.a in Frameworks */,
+				E0D0D338DD73E1B82403FCBA /* libPods-SalesforceMobileSDKMapsted.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +110,16 @@
 		13B07FAE1A68108700A75B9A /* SalesforceMobileSDKMapsted */ = {
 			isa = PBXGroup;
 			children = (
+				73244E242B43C28D005FA76F /* Bridge */,
+				73244E232B43C266005FA76F /* MapView */,
+				73211ED02B43B35B00BC880C /* Resources */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				73244E1A2B43BC5C005FA76F /* SalesforceMobileSDKMapsted-Bridging-Header.h */,
 			);
 			name = SalesforceMobileSDKMapsted;
 			sourceTree = "<group>";
@@ -99,11 +127,54 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7321651A2B346A1700BA2941 /* CoreLocationUI.framework */,
+				7321651B2B346A1700BA2941 /* libswiftCoreLocation.tbd */,
+				732165172B34684700BA2941 /* CoreLocation.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-SalesforceMobileSDKMapsted.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.a */,
+				40A160484FE75BE1DDFE7F0F /* libPods-SalesforceMobileSDKMapsted.a */,
+				5D0E8C23ED771AB9BC0C39B1 /* libPods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		73211ED02B43B35B00BC880C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				73211ED12B43B35B00BC880C /* mapstyle.zip */,
+				73211ED22B43B35B00BC880C /* ios_licence.key */,
+				73211ED32B43B35B00BC880C /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		73211ED32B43B35B00BC880C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				73211ED42B43B35B00BC880C /* HelveticaLTStd-Bold.otf */,
+				73211ED52B43B35B00BC880C /* HelveticaLTStd-Roman.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		73244E232B43C266005FA76F /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				73244E1B2B43BC62005FA76F /* RNTMapstedView.swift */,
+				73244E1E2B43BC77005FA76F /* UIVIew-Extension.swift */,
+				73244E212B43C0C1005FA76F /* DebugLog.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		73244E242B43C28D005FA76F /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				73244E262B43C2AB005FA76F /* ChangeViewBridge.h */,
+				73244E252B43C2A4005FA76F /* ChangeViewBridge.m */,
+				73244E282B43C2BA005FA76F /* RNTMapstedManager.h */,
+				73244E272B43C2B2005FA76F /* RNTMapstedManager.m */,
+			);
+			name = Bridge;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -160,7 +231,7 @@
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
 				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
-				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+				6698C46E39839623D4B898C3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,7 +254,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				F17828458CD7B19B05E8182A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,7 +278,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -243,7 +314,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				73211ED92B43B35B00BC880C /* HelveticaLTStd-Roman.otf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				73211ED62B43B35B00BC880C /* mapstyle.zip in Resources */,
+				73211ED72B43B35B00BC880C /* ios_licence.key in Resources */,
+				73211ED82B43B35B00BC880C /* HelveticaLTStd-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +356,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SalesforceMobileSDKMapsted/Pods-SalesforceMobileSDKMapsted-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6698C46E39839623D4B898C3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
@@ -344,7 +436,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+		F17828458CD7B19B05E8182A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,23 +451,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SalesforceMobileSDKMapsted/Pods-SalesforceMobileSDKMapsted-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -413,7 +488,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				73244E292B43C2BA005FA76F /* ChangeViewBridge.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				73244E2A2B43C2BA005FA76F /* RNTMapstedManager.m in Sources */,
+				73244E222B43C0C1005FA76F /* DebugLog.swift in Sources */,
+				73244E1C2B43BC62005FA76F /* RNTMapstedView.swift in Sources */,
+				73244E202B43BC77005FA76F /* UIVIew-Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -459,6 +540,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = SalesforceMobileSDKMapstedTests/Info.plist;
@@ -488,10 +570,23 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QY69L9858J;
 				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ios/Pods/mapsted-sdk-map",
+					"$(PROJECT_DIR)/ios/Pods/mapsted-sdk-map-ui",
+					"$(PROJECT_DIR)/ios/Pods/mapsted-sdk-core",
+					"$(PROJECT_DIR)/ios/Pods/mapsted-sdk-alerts",
+				);
 				INFOPLIST_FILE = SalesforceMobileSDKMapsted/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
@@ -501,6 +596,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SalesforceMobileSDKMapsted;
+				SWIFT_OBJC_BRIDGING_HEADER = "SalesforceMobileSDKMapsted-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -515,10 +611,23 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QY69L9858J;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ios/Pods/mapsted-sdk-map",
+					"$(PROJECT_DIR)/ios/Pods/mapsted-sdk-map-ui",
+					"$(PROJECT_DIR)/ios/Pods/mapsted-sdk-core",
+					"$(PROJECT_DIR)/ios/Pods/mapsted-sdk-alerts",
+				);
 				INFOPLIST_FILE = SalesforceMobileSDKMapsted/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
@@ -528,6 +637,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SalesforceMobileSDKMapsted;
+				SWIFT_OBJC_BRIDGING_HEADER = "SalesforceMobileSDKMapsted-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -583,7 +693,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers/react/nativemodule/core",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers/platform/ios",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-NativeModulesApple/React_NativeModulesApple.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -658,7 +776,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers/react/nativemodule/core",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers/platform/ios",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-NativeModulesApple/React_NativeModulesApple.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",

@@ -13,6 +13,7 @@ cd SalesforceMobileSDK-Mapsted & yarn install
 ## Step 2:
 
 cd ios & pod install
+(if you encounter this error "Invalid `Podfile` file: undefined method `enable_user_defined_build_types!'" when execute pod install, please run "sudo gem install cocoapods-user-defined-build-types" first)
 
 ## Step 3:
 

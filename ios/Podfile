@@ -3,10 +3,13 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 require_relative '../mobile_sdk/SalesforceMobileSDK-iOS/mobilesdk_pods'
 
 platform :ios, '14.0'
-#use_modular_headers!
-use_frameworks!
+use_modular_headers!
 
 project 'SalesforceMobileSDKMapsted.xcodeproj'
+
+plugin 'cocoapods-user-defined-build-types'
+enable_user_defined_build_types!
+
 target 'SalesforceMobileSDKMapsted' do
   source 'https://cdn.cocoapods.org/'
   config = use_native_modules!
@@ -40,7 +43,7 @@ target 'SalesforceMobileSDKMapsted' do
   #source 'https://github.com/Mapsted/podspec.git'
   source 'https://github.com/Mapsted/podspec-simulator.git'
   #use_frameworks!
-  pod 'mapsted-sdk-map-ui', '~> 5.0'
+  pod 'mapsted-sdk-map-ui', '~> 5.0', :build_type => :dynamic_framework
   # Mapsted map end
 
 
