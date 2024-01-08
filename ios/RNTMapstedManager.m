@@ -14,7 +14,8 @@ RCT_EXPORT_MODULE(RNTMap)
 - (UIView *)view
 {
   // return [[MKMapView alloc] init];
-  return [[RNTMapstedView alloc] init];
+  // return [[RNTMapstedView alloc] init];
+  return [[RNTMapstedNavigateView alloc] init];
   // return [[RCNMapViewTest alloc] initWithFrame:CGRectMake(0, 0, 320, 320)];
 }
 // RNTMapManager.m
