@@ -35,7 +35,7 @@ function Details({ navigation }) {
         }}
       />
       {showMap && 
-      <View style={{ width: 350, height: 400 }}>
+      <View style={{ width: 350, height: 600 }}>
         <MapView style={{ width: '100%', height: '100%' }} 
             propertyId={504}
             unloadMap={unloadMap}
