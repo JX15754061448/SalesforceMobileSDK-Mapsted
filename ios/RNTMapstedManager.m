@@ -14,12 +14,13 @@ RCT_EXPORT_MODULE(RNTMap)
 - (UIView *)view
 {
   // return [[MKMapView alloc] init];
-  // return [[RNTMapstedView alloc] init];
-  return [[RNTMapstedNavigateView alloc] init];
-  // return [[RCNMapViewTest alloc] initWithFrame:CGRectMake(0, 0, 320, 320)];
+  return [[RNTMapstedView alloc] init];
+  //return [[RNTMapstedNavigateView alloc] init];
 }
 // RNTMapManager.m
-// RCT_EXPORT_VIEW_PROPERTY(zoomEnabled, BOOL)
-RCT_EXPORT_VIEW_PROPERTY(title, NSString)
-
+RCT_EXPORT_VIEW_PROPERTY(propertyId, int)
+RCT_EXPORT_VIEW_PROPERTY(unloadMap, BOOL)
+RCT_EXPORT_VIEW_PROPERTY(onLoadCallback, RCTBubblingEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(onSelectLocation, RCTBubblingEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(onUnloadCallback, RCTBubblingEventBlock)
 @end

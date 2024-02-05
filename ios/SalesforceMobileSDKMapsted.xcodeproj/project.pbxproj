@@ -67,6 +67,7 @@
 		73244E272B43C2B2005FA76F /* RNTMapstedManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNTMapstedManager.m; sourceTree = "<group>"; };
 		73244E282B43C2BA005FA76F /* RNTMapstedManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNTMapstedManager.h; sourceTree = "<group>"; };
 		73FE69992B4B90AC00427D2E /* RNTMapstedNavigateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNTMapstedNavigateView.swift; sourceTree = "<group>"; };
+		73FE699B2B4B99A000427D2E /* SalesforceMobileSDKMapsted.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = SalesforceMobileSDKMapsted.entitlements; path = SalesforceMobileSDKMapsted/SalesforceMobileSDKMapsted.entitlements; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SalesforceMobileSDKMapsted/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.release.xcconfig"; path = "Target Support Files/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -112,6 +113,7 @@
 		13B07FAE1A68108700A75B9A /* SalesforceMobileSDKMapsted */ = {
 			isa = PBXGroup;
 			children = (
+				73FE699B2B4B99A000427D2E /* SalesforceMobileSDKMapsted.entitlements */,
 				73244E242B43C28D005FA76F /* Bridge */,
 				73244E232B43C266005FA76F /* MapView */,
 				73211ED02B43B35B00BC880C /* Resources */,
@@ -572,6 +574,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SalesforceMobileSDKMapsted/SalesforceMobileSDKMapsted.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QY69L9858J;
 				ENABLE_BITCODE = NO;
@@ -615,6 +618,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SalesforceMobileSDKMapsted/SalesforceMobileSDKMapsted.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QY69L9858J;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;

@@ -180,17 +180,16 @@ class RNTMapstedNavigateView: UIView {
             self.displayProperty(propertyInfo: firstProperty) {
                 let propertyId = firstProperty.propertyId
                 self.Logger.Log("displayProperty", propertyId)
-                //self.findEntityByName(name: "Washrooms", propertyId: propertyId)
+                self.findEntityByName(name: "Washrooms", propertyId: propertyId)
                 
-                //self.getCategories(propertyId: propertyId)
+                self.getCategories(propertyId: propertyId)
                 
-                //self.searchPOIs(propertyId: propertyId)
+                self.searchPOIs(propertyId: propertyId)
                 
                 //Search for POIS with filter
                 self.searchPOIsWithCategoryFilter(propertyId: propertyId, categoryId: "abc123")
-
-                
-               // self.chooseFromEntities(name: "lounge", propertyId: propertyId)
+              
+                self.chooseFromEntities(name: "lounge", propertyId: propertyId)
             }
         }
         else {
