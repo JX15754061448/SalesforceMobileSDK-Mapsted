@@ -33,7 +33,9 @@ import MapstedMapUi
         if (self.propertyId != newVal) {
           self._propertyId = newVal
           if (self.initSuccess) {
-            downloadPropertyAndDraw()
+            DispatchQueue.main.async {
+              self.setupUI()
+            }
           }
         }
       }
@@ -163,7 +165,9 @@ import MapstedMapUi
     fileprivate func handleSuccess() {
         self.initSuccess = true
         DispatchQueue.main.async {
+          if self.propertyId != 0 {
             self.setupUI()
+          }
         }
     }
     
@@ -177,7 +181,7 @@ import MapstedMapUi
         }
         DispatchQueue.main.async {
           // remove property first in case draw again
-            MapstedMapApi.shared.removeProperty(propertyId: propertyId)
+            //MapstedMapApi.shared.removeProperty(propertyId: propertyId)
             MapstedMapApi.shared.drawProperty(isSelected: true, propertyData: propertyData)
             if let propertyInfo = PropertyInfo(propertyId: propertyId) {
                 MapstedMapApi.shared.mapView()?.moveToLocation(mercator: propertyInfo.getCentroid(), zoom: 18, duration: 0.2)
