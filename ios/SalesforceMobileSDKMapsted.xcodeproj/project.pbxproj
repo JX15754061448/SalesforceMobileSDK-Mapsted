@@ -13,7 +13,6 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7149423EB8E5FAC55D562FC9 /* libPods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0E8C23ED771AB9BC0C39B1 /* libPods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.a */; };
 		73211ED62B43B35B00BC880C /* mapstyle.zip in Resources */ = {isa = PBXBuildFile; fileRef = 73211ED12B43B35B00BC880C /* mapstyle.zip */; };
-		73211ED72B43B35B00BC880C /* ios_licence.key in Resources */ = {isa = PBXBuildFile; fileRef = 73211ED22B43B35B00BC880C /* ios_licence.key */; };
 		73211ED82B43B35B00BC880C /* HelveticaLTStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 73211ED42B43B35B00BC880C /* HelveticaLTStd-Bold.otf */; };
 		73211ED92B43B35B00BC880C /* HelveticaLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 73211ED52B43B35B00BC880C /* HelveticaLTStd-Roman.otf */; };
 		73244E1C2B43BC62005FA76F /* RNTMapstedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73244E1B2B43BC62005FA76F /* RNTMapstedView.swift */; };
@@ -21,6 +20,7 @@
 		73244E222B43C0C1005FA76F /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73244E212B43C0C1005FA76F /* DebugLog.swift */; };
 		73244E292B43C2BA005FA76F /* ChangeViewBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 73244E252B43C2A4005FA76F /* ChangeViewBridge.m */; };
 		73244E2A2B43C2BA005FA76F /* RNTMapstedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73244E272B43C2B2005FA76F /* RNTMapstedManager.m */; };
+		733498842B884FAC00726E33 /* ios_licence_pepsico_hamilton.key in Resources */ = {isa = PBXBuildFile; fileRef = 733498832B884FAC00726E33 /* ios_licence_pepsico_hamilton.key */; };
 		73FE699A2B4B90AC00427D2E /* RNTMapstedNavigateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FE69992B4B90AC00427D2E /* RNTMapstedNavigateView.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		E0D0D338DD73E1B82403FCBA /* libPods-SalesforceMobileSDKMapsted.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A160484FE75BE1DDFE7F0F /* libPods-SalesforceMobileSDKMapsted.a */; };
@@ -52,7 +52,6 @@
 		5B7EB9410499542E8C5724F5 /* Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.debug.xcconfig"; path = "Target Support Files/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests/Pods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5D0E8C23ED771AB9BC0C39B1 /* libPods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SalesforceMobileSDKMapsted-SalesforceMobileSDKMapstedTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73211ED12B43B35B00BC880C /* mapstyle.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = mapstyle.zip; sourceTree = "<group>"; };
-		73211ED22B43B35B00BC880C /* ios_licence.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ios_licence.key; sourceTree = "<group>"; };
 		73211ED42B43B35B00BC880C /* HelveticaLTStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaLTStd-Bold.otf"; sourceTree = "<group>"; };
 		73211ED52B43B35B00BC880C /* HelveticaLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaLTStd-Roman.otf"; sourceTree = "<group>"; };
 		732165172B34684700BA2941 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -66,6 +65,7 @@
 		73244E262B43C2AB005FA76F /* ChangeViewBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeViewBridge.h; sourceTree = "<group>"; };
 		73244E272B43C2B2005FA76F /* RNTMapstedManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNTMapstedManager.m; sourceTree = "<group>"; };
 		73244E282B43C2BA005FA76F /* RNTMapstedManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNTMapstedManager.h; sourceTree = "<group>"; };
+		733498832B884FAC00726E33 /* ios_licence_pepsico_hamilton.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ios_licence_pepsico_hamilton.key; sourceTree = "<group>"; };
 		73FE69992B4B90AC00427D2E /* RNTMapstedNavigateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNTMapstedNavigateView.swift; sourceTree = "<group>"; };
 		73FE699B2B4B99A000427D2E /* SalesforceMobileSDKMapsted.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = SalesforceMobileSDKMapsted.entitlements; path = SalesforceMobileSDKMapsted/SalesforceMobileSDKMapsted.entitlements; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SalesforceMobileSDKMapsted/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				73211ED12B43B35B00BC880C /* mapstyle.zip */,
-				73211ED22B43B35B00BC880C /* ios_licence.key */,
+				733498832B884FAC00726E33 /* ios_licence_pepsico_hamilton.key */,
 				73211ED32B43B35B00BC880C /* Fonts */,
 			);
 			path = Resources;
@@ -322,7 +322,7 @@
 				73211ED92B43B35B00BC880C /* HelveticaLTStd-Roman.otf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				73211ED62B43B35B00BC880C /* mapstyle.zip in Resources */,
-				73211ED72B43B35B00BC880C /* ios_licence.key in Resources */,
+				733498842B884FAC00726E33 /* ios_licence_pepsico_hamilton.key in Resources */,
 				73211ED82B43B35B00BC880C /* HelveticaLTStd-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

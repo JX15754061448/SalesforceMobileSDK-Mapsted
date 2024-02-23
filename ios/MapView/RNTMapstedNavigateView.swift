@@ -18,6 +18,44 @@ class RNTMapstedNavigateView: UIView {
     private var mapsVC: MapstedMapUiViewController?
     private var spinnerView: UIActivityIndicatorView!
     var mapPlaceholderView: UIView!
+    //var _propertyId: Int = 504
+    var _propertyId: Int = 1132 // for real property
+    var initSuccess: Bool = false
+    @objc var onLoadCallback: RCTBubblingEventBlock?
+    @objc var onSelectLocation: RCTBubblingEventBlock?
+    @objc var onUnloadCallback: RCTBubblingEventBlock?
+
+    @objc var propertyId: Int {
+      get {
+        return self._propertyId
+      }
+      set (newVal) {
+        if (self.propertyId != newVal) {
+          //self._propertyId = newVal
+          //if (self.initSuccess) {
+            //DispatchQueue.main.async {
+              //self.setupUI()
+              //self.handleSuccess()
+            //}
+          //}
+        }
+      }
+    }
+
+    @objc var unloadMap: Bool {
+      get {
+        return false
+      }
+      set (newVal) {
+        if (newVal == true) {
+          print("===>unload map")
+//          if (self.onUnloadCallback != nil) {
+//            self.onUnloadCallback!(["isSuccess": true])
+//          }
+          removePropertyAndResourcesBeforeDownload()
+        }
+      }
+    }
 
     let Logger = DebugLog()
     //MARK: -
@@ -36,7 +74,12 @@ class RNTMapstedNavigateView: UIView {
         super.init(coder: coder)
         createSubViews()
     }
-    
+    // Unload property and map
+    func removePropertyAndResourcesBeforeDownload() {
+        MapstedMapApi.shared.removeProperty(propertyId: self.propertyId)
+        CoreApi.PropertyManager.unload(propertyId: self.propertyId, listener: self)
+        MapstedMapApi.shared.unloadMapResources()
+    }
     // Creating subview
     private func createSubViews() {
         self.mapPlaceholderView = UIView(frame: self.frame);
@@ -69,50 +112,19 @@ class RNTMapstedNavigateView: UIView {
     
     //MARK: - Show & Hide Spinner
     
-        //Start progress indicator
+    //Start progress indicator
     func showSpinner() {
         DispatchQueue.main.async {
             self.spinnerView?.startAnimating()
         }
     }
     
-        //Stop progress indicator
+    //Stop progress indicator
     func hideSpinner() {
         DispatchQueue.main.async {
             self.spinnerView?.stopAnimating()
         }
     }
-        
-    //MARK: - Segue Handler
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let containerVC = segue.destination as? ContainerViewController, segue.identifier == "containerSegue" {
-//            self.containerVC = containerVC
-//        }
-//    }
-    
-    //MARK: - ViewController Lifecycle
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        spinnerView.startAnimating()
-//        Logger.Log("Initialize", CoreApi.hasInit())
-//        if CoreApi.hasInit() {
-//            handleSuccess()
-//        }
-//        else {
-//            Logger.Log("MapstedMapApi", "")
-//            MapstedMapApi.shared.setUp(prefetchProperties: false, callback: self)
-//        }
-//    }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//    }
-//    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//    }
     
     //MARK: - Intialize and add MapView and display property
     
@@ -148,13 +160,12 @@ class RNTMapstedNavigateView: UIView {
         
     }
     
-    func displayProperty(propertyInfo: PropertyInfo, completion: (() -> ())? = nil) {
+    func displayProperty(propertyId: Int, completion: (() -> ())? = nil) {
         //zoom to property
             self.mapsVC?.showLoadingSpinner(text: "Loading...")
-            // self.spinnerView.stopAnimating()
             hideSpinner()
         
-        let propertyId = propertyInfo.getPropertyId()
+        //let propertyId = propertyInfo.getPropertyId()
         mapsVC?.selectAndDrawProperty(propertyId: propertyId, callback: {[weak self] status in
             DispatchQueue.main.async {
                 self?.mapsVC?.hideLoadingSpinner()
@@ -172,29 +183,29 @@ class RNTMapstedNavigateView: UIView {
     
     //Method to handle success scenario after SDK initialized
     fileprivate func handleSuccess() {
-        let propertyInfos = CoreApi.PropertyManager.getAll()
-        Logger.Log("propertyInfos", propertyInfos)
-        if propertyInfos.count > 0 {
-            let firstProperty = propertyInfos[0]
-            Logger.Log("firstProperty", firstProperty)
-            self.displayProperty(propertyInfo: firstProperty) {
-                let propertyId = firstProperty.propertyId
-                self.Logger.Log("displayProperty", propertyId)
-                self.findEntityByName(name: "Washrooms", propertyId: propertyId)
-                
-                self.getCategories(propertyId: propertyId)
-                
-                self.searchPOIs(propertyId: propertyId)
-                
-                //Search for POIS with filter
-                self.searchPOIsWithCategoryFilter(propertyId: propertyId, categoryId: "abc123")
-              
-                self.chooseFromEntities(name: "lounge", propertyId: propertyId)
+//        let propertyInfos = CoreApi.PropertyManager.getAll()
+//        Logger.Log("propertyInfos", propertyInfos)
+//        if propertyInfos.count > 0 {
+//            let firstProperty = propertyInfos[0]
+//            Logger.Log("firstProperty", firstProperty)
+            self.displayProperty(propertyId: self.propertyId) {
+                //let propertyId = firstProperty.propertyId
+                //self.Logger.Log("displayProperty", propertyId)
+//                self.findEntityByName(name: "Washrooms", propertyId: propertyId)
+//                
+//                self.getCategories(propertyId: propertyId)
+//                
+//                self.searchPOIs(propertyId: propertyId)
+//                
+//                //Search for POIS with filter
+//                self.searchPOIsWithCategoryFilter(propertyId: propertyId, categoryId: "abc123")
+//              
+//                self.chooseFromEntities(name: "lounge", propertyId: propertyId)
             }
-        }
-        else {
-            self.Logger.Log("No properties found", "")
-        }
+//        }
+//        else {
+//            self.Logger.Log("No properties found", "")
+//        }
     }
     
     //MARK: - Utility Methods
@@ -573,3 +584,14 @@ extension RNTMapstedNavigateView : MNAlertDelegate {
         return false
     }
 }
+//MARK: - Property Action Complete Listener
+extension RNTMapstedNavigateView : PropertyActionCompleteListener {
+    func completed(action: MapstedCore.PropertyAction, propertyId: Int, sucessfully: Bool, error: Error?) {
+        print("Property: \(propertyId) Unloaded successfully: \(sucessfully) - error: \(String(describing: error))")
+        // self.removeFromSuperview()
+        if (self.onUnloadCallback != nil) {
+          self.onUnloadCallback!(["isSuccess": true])
+        }
+    }
+}
+

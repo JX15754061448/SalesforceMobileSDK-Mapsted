@@ -29,17 +29,17 @@ function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
-      <Button
+      {/* <Button
         title="Go to Details"
         onPress={() => {
             setUnloadMap(true)
         }}
-      />
+      /> */}
       {showMap && 
-      <View style={{ width: 350, height: 400 }}>
+      <View style={{ width: 400, height: 700 }}>
         <MapView 
             style={{ width: '100%', height: '100%' }} 
-            propertyId={504}
+            propertyId={1132}
             unloadMap={unloadMap}
             onUnloadCallback={onUnloadCallback}
         />
