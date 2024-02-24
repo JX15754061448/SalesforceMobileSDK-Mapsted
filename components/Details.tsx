@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MapView from '../MapstedView/MapView';
 import { useEffect, useState } from 'react';
+import MapstedUIView from '../MapstedView/MapstedUIView';
 
 function Details({ navigation }) {
     const [unloadMap, setUnloadMap] = useState(false)
@@ -35,8 +36,8 @@ function Details({ navigation }) {
         }}
       />
       {showMap && 
-      <View style={{ width: 350, height: 600 }}>
-        <MapView style={{ width: '100%', height: '100%' }} 
+      <View style={{ width: 400, height: 700 }}>
+        <MapstedUIView style={{ width: '100%', height: '100%' }} 
             propertyId={1132}
             unloadMap={unloadMap}
             onUnloadCallback={onUnloadCallback}

@@ -19,7 +19,7 @@ class RNTMapstedNavigateView: UIView {
     private var spinnerView: UIActivityIndicatorView!
     var mapPlaceholderView: UIView!
     //var _propertyId: Int = 504
-    var _propertyId: Int = 1132 // for real property
+    var _propertyId: Int = 0 // for real property
     var initSuccess: Bool = false
     @objc var onLoadCallback: RCTBubblingEventBlock?
     @objc var onSelectLocation: RCTBubblingEventBlock?
@@ -31,13 +31,10 @@ class RNTMapstedNavigateView: UIView {
       }
       set (newVal) {
         if (self.propertyId != newVal) {
-          //self._propertyId = newVal
-          //if (self.initSuccess) {
-            //DispatchQueue.main.async {
-              //self.setupUI()
-              //self.handleSuccess()
-            //}
-          //}
+          self._propertyId = newVal
+          if (!self.initSuccess) {
+              self.handleSuccess()
+          }
         }
       }
     }
@@ -49,9 +46,6 @@ class RNTMapstedNavigateView: UIView {
       set (newVal) {
         if (newVal == true) {
           print("===>unload map")
-//          if (self.onUnloadCallback != nil) {
-//            self.onUnloadCallback!(["isSuccess": true])
-//          }
           removePropertyAndResourcesBeforeDownload()
         }
       }
@@ -83,7 +77,7 @@ class RNTMapstedNavigateView: UIView {
     // Creating subview
     private func createSubViews() {
         self.mapPlaceholderView = UIView(frame: self.frame);
-        self.mapPlaceholderView.backgroundColor = UIColor.gray;
+        //self.mapPlaceholderView.backgroundColor = UIColor.gray;
         addSubview(self.mapPlaceholderView);
       self.spinnerView = UIActivityIndicatorView(frame: CGRect(origin: CGPoint(x: (self.frame.size.width - 20)/2, y: (self.frame.size.height - 20)/2), size: CGSize(width: 20, height: 20)))
         addSubview(self.spinnerView)
@@ -91,7 +85,10 @@ class RNTMapstedNavigateView: UIView {
         showSpinner()
         Logger.Log("Initialize", CoreApi.hasInit())
         if CoreApi.hasInit() {
-            handleSuccess()
+          DispatchQueue.main.async {
+              self.Logger.Log("already init success", "")
+              self.addMapView()
+          }
         }
         else {
             Logger.Log("MapstedMapApi", "")
@@ -143,11 +140,11 @@ class RNTMapstedNavigateView: UIView {
 
                 self.containerVC?.didMove(toParent: self.findViewController())
                 //self.mapsVC?.didMove(toParent: self.findViewController())
-
-
             }
         }
-        self.handleSuccess()
+        if (self.propertyId != 0) {
+            self.handleSuccess()
+        }
     }
     
     func getGeoFenceNotifications() {
@@ -161,28 +158,35 @@ class RNTMapstedNavigateView: UIView {
     }
     
     func displayProperty(propertyId: Int, completion: (() -> ())? = nil) {
+        MapstedMapApi.shared.downloadPackage(propertyId: propertyId)
+        // For showing the store map view instead of the world map
+        let _ = MapstedMapApi.shared.centerOnProperty(propertyId: propertyId)
+        //MapstedMapApi.shared.removeProperty(propertyId: propertyId)
+
         //zoom to property
-            self.mapsVC?.showLoadingSpinner(text: "Loading...")
-            hideSpinner()
-        
+        self.mapsVC?.showLoadingSpinner(text: "Loading...")
+        hideSpinner()
+        print("===propertyId: \(propertyId)")
+
         //let propertyId = propertyInfo.getPropertyId()
-        mapsVC?.selectAndDrawProperty(propertyId: propertyId, callback: {[weak self] status in
-            DispatchQueue.main.async {
-                self?.mapsVC?.hideLoadingSpinner()
-                if status {
-                    self?.mapsVC?.displayPropertyOnMap {
-                        completion?()
-                    }
-                }
-                else {
-                    self?.Logger.Log("Problem with status on select and draw", status)
-                }
-            }
+        self.mapsVC?.selectAndDrawProperty(propertyId: propertyId, callback: {[weak self] status in
+              DispatchQueue.main.async {
+                  self?.mapsVC?.hideLoadingSpinner()
+                  if status {
+                      self?.mapsVC?.displayPropertyOnMap {
+                          completion?()
+                      }
+                  }
+                  else {
+                      self?.Logger.Log("Problem with status on select and draw", status)
+                  }
+              }
         })
     }
     
     //Method to handle success scenario after SDK initialized
     fileprivate func handleSuccess() {
+      self.initSuccess = true
 //        let propertyInfos = CoreApi.PropertyManager.getAll()
 //        Logger.Log("propertyInfos", propertyInfos)
 //        if propertyInfos.count > 0 {
@@ -192,14 +196,14 @@ class RNTMapstedNavigateView: UIView {
                 //let propertyId = firstProperty.propertyId
                 //self.Logger.Log("displayProperty", propertyId)
 //                self.findEntityByName(name: "Washrooms", propertyId: propertyId)
-//                
+//
 //                self.getCategories(propertyId: propertyId)
-//                
+//
 //                self.searchPOIs(propertyId: propertyId)
-//                
+//
 //                //Search for POIS with filter
 //                self.searchPOIsWithCategoryFilter(propertyId: propertyId, categoryId: "abc123")
-//              
+//
 //                self.chooseFromEntities(name: "lounge", propertyId: propertyId)
             }
 //        }
