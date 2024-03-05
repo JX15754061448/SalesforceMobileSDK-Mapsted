@@ -131,9 +131,9 @@ import MapstedMapUi
         addParentsConstraints(view: mapViewController.view)
         mapViewController.didMove(toParent: self.findViewController())
         // Add map click listener
-        MapstedMapApi.shared.addMapTileEventListenerDelegate(delegate: self)
-        MapstedMapApi.shared.addMapVectorElementListenerDelegate(delegate: self)
-        MapstedMapApi.shared.addMapListenerDelegate(delegate: self)
+        mapViewController.addMapTileEventListenerDelegate(delegate: self)
+        mapViewController.addMapVectorElementListenerDelegate(delegate: self)
+        mapViewController.addMapListenerDelegate(delegate: self)
         //Added handleSuccess once MapView is ready to avoid any plotting issues.
         downloadPropertyAndDraw()
     }
